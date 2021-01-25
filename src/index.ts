@@ -1,4 +1,4 @@
-// sortting algorithm for numbers, from smallest to largest
+// sorting  numbers
 
 class Sorter {
   constructor(public collection: number[]) {}
