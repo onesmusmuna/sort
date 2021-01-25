@@ -1,7 +1,11 @@
-// sorting  numbers
+// Sorting both numbers and string array.
+// using a type guard
+// instanceof
+// typeof
+// Disclaimer: This is bad code.
 
 class Sorter {
-  constructor(public collection: number[]) {}
+  constructor(public collection: number[] | string) {}
 
   sort(): void {
     // bubble sort
@@ -10,16 +14,20 @@ class Sorter {
 
     for (let i = 0; i < length; i++) {
       for (let j = 0; j < length - i - 1; j++) {
-        if (this.collection[j] > this.collection[j + 1]) {
-          const leftHand = this.collection[j];
-          this.collection[j] = this.collection[j + 1];
-          this.collection[j + 1] = leftHand;
+        // using type guards.
+
+        if (this.collection instanceof Array) {
+          // This works only if collection is of number[]
+          if (this.collection[j] > this.collection[j + 1]) {
+            const leftHand = this.collection[j];
+            this.collection[j] = this.collection[j + 1];
+            this.collection[j + 1] = leftHand;
+          }
+        }
+
+        if (typeof this.collection === 'string') {
         }
       }
     }
   }
 }
-
-const sorter = new Sorter([9, -2, 10, 3, 1]);
-sorter.sort();
-console.log(sorter.collection); // [ -2, 1, 3, 9, 10 ]
