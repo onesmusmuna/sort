@@ -1,7 +1,14 @@
-import NumbersCollection from './numbersCollection';
+// In order to be sorted, you need to have these properties.
+// Because the Sorter algorithm depends on the to do its job.
+
+interface Sortable {
+  length: number;
+  compare(leftIndex: number, rightIndex: number): boolean;
+  swap(leftIndex: number, rightIndex: number): void;
+}
 
 export default class Sorter {
-  constructor(public collection: NumbersCollection) {}
+  constructor(public collection: Sortable) {}
 
   sort(): void {
     const { length } = this.collection;
