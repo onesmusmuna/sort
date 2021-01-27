@@ -1,5 +1,9 @@
-export default class NumbersCollection {
-  constructor(public data: number[]) {}
+import Sorter from './sorter';
+
+export default class NumbersCollection extends Sorter {
+  constructor(public data: number[]) {
+    super();
+  }
 
   get length() {
     return this.data.length;
@@ -15,3 +19,5 @@ export default class NumbersCollection {
     this.data[rightIndex] = leftHand;
   }
 }
+
+

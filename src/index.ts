@@ -1,16 +1,11 @@
-import Sorter from './sorter';
 import NumbersCollection from './numbersCollection';
 import CharactersCollecton from './charactersCollection';
 
-const numCollection = new NumbersCollection([9, 5, 2, 6, -4, 1]);
-const charCollection = new CharactersCollecton('eDgbfac');
+const myNumbers = new NumbersCollection([9, 5, 8, 0, 2, -1]);
+const myCharacters = new CharactersCollecton('ebfdgac');
 
-const sortedNumCollection = new Sorter(numCollection);
-const sortedCharCollection = new Sorter(charCollection);
+myNumbers.sort();
+myCharacters.sort();
 
-sortedNumCollection.sort();
-sortedCharCollection.sort();
-
-console.log(numCollection.data); // [ -4, 1, 2, 5, 6, 9 ]
-
-console.log(charCollection.data); // abcDefg
+console.log(myNumbers.data); // [ -1, 0, 2, 5, 8, 9 ]
+console.log(myCharacters.data); // abcdefg
